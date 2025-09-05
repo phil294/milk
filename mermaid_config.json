@@ -1,0 +1,17 @@
+{
+	"securityLevel": "loose",
+	"theme": "default",
+	"themeVariables": {},
+	"flowchart": {
+		"htmlLabels": true,
+		"titleTopMargin": 10
+	},
+	"sequence": {
+		"mirrorActors": false
+	},
+	"gantt": {},
+	"er": {},
+	"journey": {},
+	"pie": {},
+	"xychart": {}
+}
