@@ -1,10 +1,22 @@
 {
 	"securityLevel": "loose",
-	"theme": "default",
-	"themeVariables": {},
+	"theme": "forest",
+	"themeVariables": {
+		"fontFamily": "'Comic Sans MS','Comic Neue','Nunito',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif",
+		"fontSize": "12px",
+		"primaryColor": "#FFEDD5",
+		"primaryBorderColor": "#FB923C",
+		"primaryTextColor": "#1F2937",
+		"lineColor": "#94A3B8",
+		"tertiaryColor": "#E0E7FF"
+	},
 	"flowchart": {
 		"htmlLabels": true,
-		"titleTopMargin": 10
+		"curve": "linear",
+		"nodeSpacing": 8,
+		"rankSpacing": 8,
+		"padding": 0,
+		"titleTopMargin": 4
 	},
 	"sequence": {
 		"mirrorActors": false
