@@ -1,6 +1,104 @@
-flowchart LR
-    markdown["`This **is** _Markdown_ with <a href="https://waritschlager.de">a link</a> and an image <img alt="xyz" src="https://iconscout.com/ms-icon-310x310.png" width="30" />`"]
-    newLines["`Line1
-    Line 2
-    Line 3`"]
-    markdown --> newLines
+flowchart TD
+	%% markdown["`This **is** _Markdown_ with <a href="https://waritschlager.de">a link</a> and an image <img alt="xyz" src="https://iconscout.com/ms-icon-310x310.png" width="30" />`"]
+
+	cow["Cow:dKuh"]
+	raw_milk["Raw milk:dRohmilch"]
+	pasteurized_raw_milk["Non-homogenized milk (rare):dNichthomogenisierte Milch (selten)"]
+	cream["Cream, 40% fat:dRahm / Rohrahm, 40% Fett"]
+	skimmed_raw_milk["Skimmed raw milk, 0.1% fat:dMagermilch, 0,1% Fett"]
+	homogenized_milk_cream["Homogenized milk/cream"]
+	pasteurized_milk_cream["Pasteurized milk/cream"]
+%% h/voll
+	pasteurized_milk["Pasteurized milk:dPasteurisierte Milch"]
+	pasteurized_cream["Pasteurized cream:dPasteurisierter Rahm / Sahne / Rahm"]
+	uht_milk_cream["UHT milk/cream:dUltrahocherhitzte Milch/Rahm"]
+	uht_milk["UHT milk:dH-Milch"]
+	uht_cream["UHT cream:dUltrahocherhitzte Sahne"]
+	filtered_skimmed_raw_milk["Filtered skimmed raw milk:dGefilterte Magermilch"]
+	micro_filtered_milk["Micro-filtered milk / Ultra-filtered milk"]
+	lactic_acid_bacteria["Lactic acid bacteria / Lactobacillales:dMilchsäurebakterien / Laktobakterien"]
+	standardized_milk_cream["Raw standardized milk/cream (mix):dStandardisierte Rohmilch/Rahm (Mischung) / Süße Sahne / Süßrahm"]
+	homogenized_milk_cream["Homogenized milk/cream:dHomogenisierte Milch/Rahm"]
+	sour_cream_mix["Sour Cream, varying fat percentage, pasteurized or UHT:dSauerrahm, variabler Fettanteil, pasteurisiert oder ultrahocherhitzt"]
+	sour_cream["Sour cream:dSauerrahm, Saure Sahne"]
+	creme_legere["Crème légère"]
+	schmand["Schmand"]
+	creme_fraiche["Crème fraîche"]
+	starch["Starch:dStärke"]
+	saccharose["Sugar:dZucker"]
+	shelf["Supermarket Shelf:dSupermarktregal"]
+
+	cow --> raw_milk
+	raw_milk -- Pasteurization:dPasteurisierung --> pasteurized_raw_milk
+	raw_milk -- Centrifugal cream separation:dAufrahmen / zentrifugieren --> cream
+	raw_milk -- Centrifugal cream separation:dAufrahmen / zentrifugieren --> skimmed_raw_milk
+	cream --> standardized_milk_cream
+	skimmed_raw_milk --> standardized_milk_cream
+	standardized_milk_cream -- Homogenization &lpar;pressure&rpar;:dHomogenisierung &lpar;Druck&rpar; --> homogenized_milk_cream
+%% fluid milk products:
+	homogenized_milk_cream -- Pasteurization:dPasteurisierung / HTST --> pasteurized_milk_cream
+	pasteurized_milk_cream --> pasteurized_milk
+	pasteurized_milk_cream --> pasteurized_cream
+	homogenized_milk_cream -- UHT:dUltrahocherhitzt --> uht_milk_cream
+	uht_milk_cream --> uht_milk
+	uht_milk_cream --> uht_cream
+%% end
+	skimmed_raw_milk -- Microfiltration / Ultrafiltration --> filtered_skimmed_raw_milk
+	pasteurized_cream --> micro_filtered_milk
+	filtered_skimmed_raw_milk --> micro_filtered_milk
+	pasteurized_cream --> sour_cream_mix
+	uht_cream --> sour_cream_mix
+	lactic_acid_bacteria --> sour_cream_mix
+	sour_cream_mix -- >= 10 % --> sour_cream
+	sour_cream_mix -- 18-20 % --> creme_legere
+	sour_cream_mix -- 20-29% --> schmand
+	starch --> schmand
+	sour_cream_mix -- >= 30% --> creme_fraiche
+	saccharose --> creme_fraiche
+
+	pasteurized_milk --> shelf
+	micro_filtered_milk --> shelf
+	sour_cream --> shelf
+	creme_legere --> shelf
+	schmand --> shelf
+	creme_fraiche --> shelf
+	uht_milk --> shelf
+
+%% sterilized cream
+%% Streptococcus lactis = Lactococcus lactis
+%% Leuconostoc citrovorum
+%% https://en.wikipedia.org/wiki/Dairy_product
+%% https://de.wikipedia.org/wiki/Rahm
+%% https://en.wikipedia.org/wiki/File:Milkproducts_v2.svg
+%% https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Milch.svg/960px-Milch.svg.png
+%% https://www.slideshare.net/slideshow/fermented-milk-products/39218590
+%% https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html#a-link-with-arrow-head-and-text
+%% https://de.wikipedia.org/wiki/Milchs%C3%A4urebakterien
+%% https://de.wikipedia.org/wiki/Schmand\
+%% https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rahm-_und_Sauerrahmprodukte.svg/653px-Rahm-_und_Sauerrahmprodukte.svg.png
+%% https://en.wikipedia.org/wiki/Cream
+%% https://de.wikipedia.org/wiki/Rahm
+%% https://en.wikipedia.org/wiki/Quark
+%% https://de.wikipedia.org/wiki/Milcherzeugnis
+%% https://en.wikipedia.org/wiki/Dairy_product
+%% https://de.wikipedia.org/wiki/Milch
+%% milchfett milchzucker
+%% cheese
+%% infant formula
+%% joghurt
+%% drinking joghurt
+%% concentrated / greek joghurt
+%% frozen joghurt
+%% sour cream
+%% cream
+%% creme fraiche
+%% lassi
+%% https://www.scribd.com/document/892108474/Flowcharts-Dairy-Products
+%% nanny goad
+%% ewe
+%% butter
+%% lactose
+%% kefir
+%% acidophilus milk
+%% cultured buttermilk
+%% wat
