@@ -2,7 +2,7 @@
 	"securityLevel": "loose",
 	"theme": "forest",
 	"themeVariables": {
-		"fontFamily": "'Comic Sans MS','Comic Neue','Nunito',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif",
+		"fontFamily": "Arial,sans-serif",
 		"fontSize": "12px",
 		"primaryColor": "#FFEDD5",
 		"primaryBorderColor": "#FB923C",
@@ -16,14 +16,10 @@
 		"nodeSpacing": 8,
 		"rankSpacing": 8,
 		"padding": 0,
-		"titleTopMargin": 4
+		"titleTopMargin": 4,
+		"defaultRenderer": "elk"
 	},
 	"sequence": {
 		"mirrorActors": false
-	},
-	"gantt": {},
-	"er": {},
-	"journey": {},
-	"pie": {},
-	"xychart": {}
+	}
 }

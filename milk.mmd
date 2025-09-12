@@ -1,53 +1,57 @@
 flowchart TD
-	%% markdown["`This **is** _Markdown_ with <a href="https://waritschlager.de">a link</a> and an image <img alt="xyz" src="https://iconscout.com/ms-icon-310x310.png" width="30" />`"]
-
-	cow["{{{Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg}}}Cow###Kuh"]
-	raw_milk["{{{Raw_Milk_in_containers.jpg}}}Raw milk###Rohmilch"]
-	pasteurized_raw_milk["{{{Milk-bottle.jpg}}}Non-homogenized milk (rare)###Nichthomogenisierte Milch (selten)"]
-	cream["{{{Lyzka_smietany.JPG}}}Cream, 40% fat###Rahm / Rohrahm, 40% Fett"]
-	skimmed_raw_milk["{{{Skimmed_milk.jpg}}}Skimmed raw milk, 0.1% fat###Magermilch, 0,1% Fett"]
+	cow(("IMG:::Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg:120:80<br>Cow###Kuh"))
+	raw_milk["IMG:::Raw_Milk_in_containers.jpg:120:94<br>Raw milk###Rohmilch"]
+	pasteurized_nonhomogenized_milk["IMG:::Milk-bottle.jpg:60:80<br>Non-homogenized milk (rare)###Nichthomogenisierte Milch (selten)"]
+	cream_separation[/"Centrifugal cream separation###Aufrahmen / zentrifugieren"/]
+	raw_cream["(Raw) Cream, ~40% fat###Rahm / Rohrahm, ~40% Fett"]
+	raw_skim_milk["Raw skim milk, ~0.1% fat###Rohe Magermilch, ~0,1% Fett"]
+	pasteurized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>Pasteurized cream###Pasteurisierter Rahm"]
 	homogenized_milk_cream["Homogenized milk/cream"]
-	pasteurized_milk_cream["Pasteurized milk/cream"]
-%% h/voll
-	pasteurized_milk["{{{Milk_001.JPG}}}Pasteurized milk###Pasteurisierte Milch"]
-	pasteurized_cream["Pasteurized cream###Pasteurisierter Rahm / Sahne / Rahm"]
-	uht_milk_cream["UHT milk/cream###Ultrahocherhitzte Milch/Rahm"]
-	uht_milk["{{{Thai-Denmark_UHT-milk_IMG20201019.jpg}}}UHT milk###H-Milch"]
-	uht_cream["UHT cream###Ultrahocherhitzte Sahne"]
-	filtered_skimmed_raw_milk["Filtered skimmed raw milk###Gefilterte Magermilch"]
+	pasteurized_standardized_milk_cream["Pasteurized standardized<br>milk/cream"]
+	pasteurized_standardized_milk["IMG:::Milk_001.JPG:60:80<br>Pasteurized milk<br>Skimmed milk, semi-skimmed milk, whole milk, depending on fat###Pasteurisierte milch<br>Magermilch / Entrahmte Milch, Fettarme Milch, Vollmilch, je nach Fettgehalt"]
+	pasteurized_standardized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>Pasteurized standardized cream###Pasteurisierter standardisierter Rahm / Sahne / Rahm"]
+	uht_standardized_milk_cream["UHT standardized milk/cream###Ultrahocherhitzte standardisierte Milch/Rahm"]
+	uht_milk["IMG:::Milk_001.JPG:60:80<br>UHT milk<br>Variants like pasteurized###H-Milch<br>Varianten wie Pasteurisiert"]
+	uht_standardized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>UHT standardized cream###Ultrahocherhitzte standardisierte Sahne"]
+	filtered_raw_skim_milk["Filtered skimmed raw milk###Gefilterte Magermilch"]
 	micro_filtered_milk["Micro-filtered milk / Ultra-filtered milk"]
-	lactic_acid_bacteria["{{{02-0667_1b.jpg}}}Lactic acid bacteria / Lactobacillales###Milchsäurebakterien / Laktobakterien"]
-	standardized_milk_cream["Raw standardized milk/cream (mix)###Standardisierte Rohmilch/Rahm (Mischung) / Süße Sahne / Süßrahm"]
+	lactic_acid_bacteria["IMG:::02-0667_1b.jpg:60:130<br>Lactic acid bacteria /<br>Lactobacillales###Milchsäurebakterien /<br>Laktobakterien"]
+	standardization[/"Standardization (mixing)###Standardisierung (Mischung)"/]
+	standardized_milk_cream["Raw standardized milk/cream###Standardisierte Rohmilch/Rahm / Süße Sahne / Süßrahm"]
 	homogenized_milk_cream["Homogenized milk/cream###Homogenisierte Milch/Rahm"]
 	sour_cream_mix["Sour Cream, varying fat percentage, pasteurized or UHT###Sauerrahm, variabler Fettanteil, pasteurisiert oder ultrahocherhitzt"]
-	sour_cream["{{{Slice_of_toast_with_sour_cream_and_pepper.jpg}}}Sour cream###Sauerrahm, Saure Sahne"]
+	sour_cream["IMG:::Slice_of_toast_with_sour_cream_and_pepper.jpg:120:90<br>Sour cream###Sauerrahm, Saure Sahne"]
 	creme_legere["Crème légère"]
-	schmand["{{{Lovely_borshch.jpg}}}Schmand"]
-	creme_fraiche["{{{Cr%C3%A8me_d%27Isigny_2.JPG}}}Crème fraîche"]
-	starch["{{{Cornstarch_mixed_with_water.jpg}}}Starch###Stärke"]
-	saccharose["{{{W%C3%BCrfelzucker_--_2018_--_3564.jpg}}}Sugar###Zucker"]
-	shelf["{{{Grocery_store_shelf_in_Russia.jpg}}}Supermarket Shelf###Supermarktregal"]
+	schmand["IMG:::Lovely_borshch.jpg:120:90<br>Schmand"]
+	creme_fraiche["IMG:::Cr%C3%A8me_d%27Isigny_2.JPG:120:90<br>Crème 	fraîche"]
+	starch["IMG:::Cornstarch_mixed_with_water.jpg:120:90<br>Starch###Stärke"]
+	saccharose["IMG:::W%C3%BCrfelzucker_--_2018_--_3564.jpg:120:75<br>Saccharose<br>Sugar###Zucker"]
+
+	class pasteurized_standardized_milk,sour_cream,creme_legere,micro_filtered_milk,schmand,creme_fraiche,uht_milk,pasteurized_nonhomogenized_milk,pasteurized_cream,pasteurized_standardized_cream,uht_standardized_cream shelf
+	class starch,saccharose external
+	class standardization,cream_separation action
 
 	cow --> raw_milk
-	raw_milk -- Pasteurization###Pasteurisierung --> pasteurized_raw_milk
-	raw_milk -- Centrifugal cream separation###Aufrahmen / zentrifugieren --> cream
-	raw_milk -- Centrifugal cream separation###Aufrahmen / zentrifugieren --> skimmed_raw_milk
-	cream --> standardized_milk_cream
-	skimmed_raw_milk --> standardized_milk_cream
-	standardized_milk_cream -- Homogenization &lpar;pressure&rpar;###Homogenisierung &lpar;Druck&rpar; --> homogenized_milk_cream
-%% fluid milk products:
-	homogenized_milk_cream -- Pasteurization###Pasteurisierung / HTST --> pasteurized_milk_cream
-	pasteurized_milk_cream --> pasteurized_milk
-	pasteurized_milk_cream --> pasteurized_cream
-	homogenized_milk_cream -- UHT###Ultrahocherhitzt --> uht_milk_cream
-	uht_milk_cream --> uht_milk
-	uht_milk_cream --> uht_cream
-%% end
-	skimmed_raw_milk -- Microfiltration / Ultrafiltration --> filtered_skimmed_raw_milk
+	raw_milk -- Pasteurization / Pasteurisierung --> pasteurized_nonhomogenized_milk
+	raw_milk --> cream_separation
+	cream_separation --> raw_cream
+	cream_separation --> raw_skim_milk
+	raw_cream -- Pasteurization / Pasteurisierung --> pasteurized_cream
+	raw_cream --> standardization
+	raw_skim_milk --> standardization
+	standardization --> standardized_milk_cream
+	standardized_milk_cream -- Homogenization &lpar;pressure&rpar; / Homogenisierung &lpar;Druck&rpar; --> homogenized_milk_cream
+	homogenized_milk_cream -- Pasteurization / Pasteurisierung / HTST --> pasteurized_standardized_milk_cream
+	pasteurized_standardized_milk_cream --> pasteurized_standardized_milk
+	pasteurized_standardized_milk_cream --> pasteurized_standardized_cream
+	homogenized_milk_cream -- UHT / Ultrahocherhitzt --> uht_standardized_milk_cream
+	uht_standardized_milk_cream --> uht_milk
+	uht_standardized_milk_cream --> uht_standardized_cream
+	raw_skim_milk -- Microfiltration / Ultrafiltration --> filtered_raw_skim_milk
 	pasteurized_cream --> micro_filtered_milk
-	filtered_skimmed_raw_milk --> micro_filtered_milk
-	pasteurized_cream --> sour_cream_mix
-	uht_cream --> sour_cream_mix
+	filtered_raw_skim_milk --> micro_filtered_milk
+	pasteurized_standardized_cream --> sour_cream_mix
+	uht_standardized_cream --> sour_cream_mix
 	lactic_acid_bacteria --> sour_cream_mix
 	sour_cream_mix -- >= 10 % --> sour_cream
 	sour_cream_mix -- 18-20 % --> creme_legere
@@ -55,12 +59,3 @@ flowchart TD
 	starch --> schmand
 	sour_cream_mix -- >= 30% --> creme_fraiche
 	saccharose --> creme_fraiche
-
-	pasteurized_milk --> shelf
-	micro_filtered_milk --> shelf
-	sour_cream --> shelf
-	creme_legere --> shelf
-	schmand --> shelf
-	creme_fraiche --> shelf
-	uht_milk --> shelf
-
