@@ -34,3 +34,7 @@ img {
 	fill: #fff1e0 !important;
 	stroke: #ff9800 !important;
 }
+
+#my-svg .flowchart-link {
+	stroke: #222;
+}

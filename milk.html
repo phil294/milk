@@ -10,6 +10,11 @@
 	<style>
 		body {
 			font-family: system-ui, arial, sans-serif;
+			margin: 0; padding: 0;
+		}
+		#root { /* because FF doesn't support background-blend-mode on body (??) */
+			padding: 3vmin;
+			overflow: auto;
 			background-color: rgba(250,255,235, 0.6);
 			background-blend-mode: lighten;
 			background-size: cover;
@@ -18,38 +23,42 @@
 			background-attachment: fixed;
 			background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=600');
 		}
-		@media screen and (min-width: 601px) { body { background-image:
+		@media screen and (min-width: 601px) { #roo { background-image:
 			url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=1920'); } }
-		@media screen and (min-width: 1921px) { body { background-image:
+		@media screen and (min-width: 1921px) { #roo { background-image:
 			url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=3840'); } }
 		#svg-container {
+			/* This combo is the best I could come up with to be able to show the entire svg
+			at page load while allowing to zoom in with browser zoom without the need for JS,
+			aka to make it super intuitive this thing is meant to be zoomed into */
 			zoom: 0.4;
 			width: 3500px;
-			min-width: 100%;
+			min-width: 70%;
 		}
 	</style>
 </head>
 <body>
-	<article>
-		<h1>Milk</h1>
-		<!-- <img/> fails to show the imgs inside the svg itself -->
-		<div id="svg-container">
-			<object data="./milk.mmd.svg" type="image/svg+xml">
-				Your browser does not support inline SVG. Try visiting the file directly: <a href="./milk.mmd.svg">milk.mmd.svg</a>
-			</object>
-		</div>
-	</article>
-	<footer>
-		<p><small>
-			License: AGPL<br>
-			Source: <a href="https://github.com/phil294/milk">https://github.com/phil294/milk</a><br>
-			Send corrections of suggestions on GitHub or to <a href="mailto:milk@waritschlager.de">milk@waritschlager.de</a><br>
-			Created 2025-09-13 with <a href="https://www.mermaidchart.com/">Mermaid</a><br>
-			Also see <a href="https://en.wikipedia.org/wiki/File:Milkproducts_v2.svg">this exhaustive picture on Wikimedia Commons</a><br>
-			Click on the images to see their origin, license, and author. <a href="https://commons.wikimedia.org/wiki/File:Cow_standing_on_a_field_in_Chastre_(DSC02477).jpg">Link to background image</a>.<br>
-			<hr>
-			<a href="/">← Back</a>
-		</small></p>
-	</footer>
+	<div id="root">
+		<article>
+			<h1>Milk</h1>
+			<!-- <img/> fails to show the imgs inside the svg itself -->
+			<div id="svg-container">
+				<object data="./milk.mmd.svg" type="image/svg+xml">
+					Your browser does not support inline SVG. Try visiting the file directly: <a href="./milk.mmd.svg">milk.mmd.svg</a>
+				</object>
+			</div>
+		</article>
+		<footer>
+			<p><small>
+				License: AGPL<br>
+				Source: <a href="https://github.com/phil294/milk">https://github.com/phil294/milk</a><br>
+				Send corrections of suggestions on GitHub or to <a href="mailto:milk@waritschlager.de">milk@waritschlager.de</a><br>
+				Created 2025-09-13 with <a href="https://www.mermaidchart.com/">Mermaid</a><br>
+				Also see <a href="https://en.wikipedia.org/wiki/File:Milkproducts_v2.svg">this exhaustive picture on Wikimedia Commons</a><br>
+				Click on the images to see their origin, license, and author. <a href="https://commons.wikimedia.org/wiki/File:Cow_standing_on_a_field_in_Chastre_(DSC02477).jpg">Link to background image</a>.<br>
+				<a href="/">← Back</a>
+			</small></p>
+		</footer>
+	</div>
 </body>
 </html>
