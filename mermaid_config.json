@@ -2,7 +2,7 @@
 	"securityLevel": "loose",
 	"theme": "forest",
 	"themeVariables": {
-		"fontFamily": "Arial,sans-serif",
+		"fontFamily": "system-ui, arial, sans-serif",
 		"fontSize": "12px",
 		"primaryColor": "#FFEDD5",
 		"primaryBorderColor": "#FB923C",

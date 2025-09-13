@@ -3,16 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A large diagram of milk and dairy products and their relations">
+	<meta name="DC.date" content="2025-09-13">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='50%' x='50%' text-anchor='middle' dominant-baseline='central' font-size='26'>🐄️</text></svg>">
 	<title>Milk</title>
 	<style>
 		body {
-			background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/22/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg');
-			background-color: rgba(255, 255, 255, 0.7);
+			font-family: system-ui, arial, sans-serif;
+			background-color: rgba(250,255,235, 0.6);
 			background-blend-mode: lighten;
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
+			background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=600');
+		}
+		@media screen and (min-width: 601px) { body { background-image:
+			url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=1920'); } }
+		@media screen and (min-width: 1921px) { body { background-image:
+			url('https://commons.wikimedia.org/wiki/Special:FilePath/Cow_standing_on_a_field_in_Chastre_%28DSC02477%29.jpg?width=3840'); } }
+		#svg-container {
+			zoom: 0.4;
+			width: 3500px;
+			min-width: 100%;
 		}
 	</style>
 </head>
@@ -20,9 +33,11 @@
 	<article>
 		<h1>Milk</h1>
 		<!-- <img/> fails to show the imgs inside the svg itself -->
-		<object data="./milk.mmd.svg" type="image/svg+xml">
-			Your browser does not support inline SVG. Try visiting the file directly: <a href="./milk.mmd.svg">milk.mmd.svg</a>
-		</object>
+		<div id="svg-container">
+			<object data="./milk.mmd.svg" type="image/svg+xml">
+				Your browser does not support inline SVG. Try visiting the file directly: <a href="./milk.mmd.svg">milk.mmd.svg</a>
+			</object>
+		</div>
 	</article>
 	<footer>
 		<p><small>
@@ -31,7 +46,7 @@
 			Send corrections of suggestions on GitHub or to <a href="mailto:milk@waritschlager.de">milk@waritschlager.de</a><br>
 			Created 2025-09-13 with <a href="https://www.mermaidchart.com/">Mermaid</a><br>
 			Also see <a href="https://en.wikipedia.org/wiki/File:Milkproducts_v2.svg">this exhaustive picture on Wikimedia Commons</a><br>
-			Click on the images to see their origin, license, and author.<br>
+			Click on the images to see their origin, license, and author. <a href="https://commons.wikimedia.org/wiki/File:Cow_standing_on_a_field_in_Chastre_(DSC02477).jpg">Link to background image</a>.<br>
 			<hr>
 			<a href="/">← Back</a>
 		</small></p>
