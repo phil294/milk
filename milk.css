@@ -2,10 +2,10 @@
 	tab-size: 2;
 }
 
-.edgeLabel {
-	/* tiny horizontal padding so labels don't touch lines */
-	padding: 0 3px;
-	border-radius: 3px;
+foreignObject {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 img {
@@ -25,15 +25,6 @@ img {
 #my-svg .node.shelf > rect {
 	stroke: #13540c !important;
 	fill: #cde498 !important;
-	&:after {
-		content: "shelf";
-		position: absolute;
-		bottom: 4px;
-		left: 50%;
-		transform: translateX(-50%);
-		font-size: 10px;
-		color: #888;
-	}
 }
 #my-svg .node.external * {
 	fill: #eee !important;

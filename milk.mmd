@@ -1,61 +1,126 @@
 flowchart TD
-	cow(("IMG:::Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg:120:80<br>Cow###Kuh"))
-	raw_milk["IMG:::Raw_Milk_in_containers.jpg:120:94<br>Raw milk###Rohmilch"]
+
+	%% %%%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	cow["IMG:::Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg:120:80<br>WIKI:::Cow###Kuh"]
+	raw_milk["IMG:::Raw_Milk_in_containers.jpg:120:94<br>WIKI:::Raw milk###Rohmilch"]
 	pasteurized_nonhomogenized_milk["IMG:::Milk-bottle.jpg:60:80<br>Non-homogenized milk (rare)###Nichthomogenisierte Milch (selten)"]
-	cream_separation[/"Centrifugal cream separation###Aufrahmen / zentrifugieren"/]
-	raw_cream["(Raw) Cream, ~40% fat###Rahm / Rohrahm, ~40% Fett"]
+	cream_separation[/"IMG:::Laufas_-_Museum_Speisekammer_5_Milchzentrifuge.jpg:120:160<br>WIKI:::Separator_(milk):Centrifugal cream separation###Aufrahmen / zentrifugieren"/]
+	raw_cream["WIKI:::Cream:(Raw) Cream, ~40% fat###Rahm / Rohrahm, ~40% Fett"]
 	raw_skim_milk["Raw skim milk, ~0.1% fat###Rohe Magermilch, ~0,1% Fett"]
 	pasteurized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>Pasteurized cream###Pasteurisierter Rahm"]
-	homogenized_milk_cream["Homogenized milk/cream"]
 	pasteurized_standardized_milk_cream["Pasteurized standardized<br>milk/cream"]
-	pasteurized_standardized_milk["IMG:::Milk_001.JPG:60:80<br>Pasteurized milk<br>Skimmed milk, semi-skimmed milk, whole milk, depending on fat###Pasteurisierte milch<br>Magermilch / Entrahmte Milch, Fettarme Milch, Vollmilch, je nach Fettgehalt"]
-	pasteurized_standardized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>Pasteurized standardized cream###Pasteurisierter standardisierter Rahm / Sahne / Rahm"]
-	uht_standardized_milk_cream["UHT standardized milk/cream###Ultrahocherhitzte standardisierte Milch/Rahm"]
-	uht_milk["IMG:::Milk_001.JPG:60:80<br>UHT milk<br>Variants like pasteurized###H-Milch<br>Varianten wie Pasteurisiert"]
+	lactic_acid_bacteria["IMG:::02-0667_1b.jpg:60:130<br>Various WIKI:::lactic acid bacteria /<br>Lactobacillales###Diverse Milchsäurebakterien /<br>Laktobakterien"]
+	pasteurized_standardized_milk["IMG:::Milk_001.JPG:60:80<br>WIKI:::Pasteurization:Pasteurized milk<br>Skimmed milk, semi-skimmed milk, whole milk, depending on fat###Pasteurisierte milch<br>Magermilch / Entrahmte Milch, Fettarme Milch, Vollmilch, je nach Fettgehalt"]
+	rennet["IMG:::Clothbound_Cheddar_-_Rennet_(4790811140).jpg:120:90<br>WIKI:::Rennet###Lab"]
+	pasteurized_standardized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>WIKI:::Cream:Pasteurized standardized cream###Pasteurisierter standardisierter Rahm / Sahne / Rahm"]
+	uht_standardized_milk_cream["WIKI:::UHT:UHT standardized milk/cream###Ultrahocherhitzte standardisierte Milch/Rahm"]
+	uht_milk["IMG:::Milk_001.JPG:60:80<br>UHT milk<br>Like pasteurized###H-Milch<br>Wie Pasteurisiert"]
 	uht_standardized_cream["IMG:::Lyzka_smietany.JPG:120:94<br>UHT standardized cream###Ultrahocherhitzte standardisierte Sahne"]
 	filtered_raw_skim_milk["Filtered skimmed raw milk###Gefilterte Magermilch"]
-	micro_filtered_milk["Micro-filtered milk / Ultra-filtered milk"]
-	lactic_acid_bacteria["IMG:::02-0667_1b.jpg:60:130<br>Lactic acid bacteria /<br>Lactobacillales###Milchsäurebakterien /<br>Laktobakterien"]
+	micro_filtered_milk["WIKI:::Milk#Filtration:Micro-filtered milk /<br>Ultra-filtered milk"]
 	standardization[/"Standardization (mixing)###Standardisierung (Mischung)"/]
 	standardized_milk_cream["Raw standardized milk/cream###Standardisierte Rohmilch/Rahm / Süße Sahne / Süßrahm"]
-	homogenized_milk_cream["Homogenized milk/cream###Homogenisierte Milch/Rahm"]
-	sour_cream_mix["Sour Cream, varying fat percentage, pasteurized or UHT###Sauerrahm, variabler Fettanteil, pasteurisiert oder ultrahocherhitzt"]
-	sour_cream["IMG:::Slice_of_toast_with_sour_cream_and_pepper.jpg:120:90<br>Sour cream###Sauerrahm, Saure Sahne"]
+	homogenized_milk_cream["WIKI:::Milk#Creaming_and_homogenization:Homogenized milk/cream###Homogenisierte Milch/Rahm"]
+	sour_cream_mix["WIKI:::Sour_cream:Sour Cream, varying fat percentage, pasteurized or UHT###Sauerrahm, variabler Fettanteil, pasteurisiert oder ultrahocherhitzt"]
+	sour_cream["IMG:::Slice_of_toast_with_sour_cream_and_pepper.jpg:120:90<br>WIKI:::Sour cream###Sauerrahm, Saure Sahne"]
 	creme_legere["Crème légère"]
-	schmand["IMG:::Lovely_borshch.jpg:120:90<br>Schmand"]
-	creme_fraiche["IMG:::Cr%C3%A8me_d%27Isigny_2.JPG:120:90<br>Crème 	fraîche"]
-	starch["IMG:::Cornstarch_mixed_with_water.jpg:120:90<br>Starch###Stärke"]
-	saccharose["IMG:::W%C3%BCrfelzucker_--_2018_--_3564.jpg:120:75<br>Saccharose<br>Sugar###Zucker"]
+	schmand["IMG:::Lovely_borshch.jpg:120:90<br>WIKI:::Schmand"]
+	creme_fraiche["IMG:::Cr%C3%A8me_d%27Isigny_2.JPG:120:90<br>WIKI:::Crème fraîche"]
+	starch["IMG:::Cornstarch_mixed_with_water.jpg:120:90<br>WIKI:::Starch###Stärke"]
+	saccharose["IMG:::W%C3%BCrfelzucker_--_2018_--_3564.jpg:120:75<br>Saccharose<br>WIKI:::Sugar###Zucker"]
+	fermentation["WIKI:::Fermentation###Fermentierung"]
+	fruit_joghurt["IMG:::JoghurtMM.jpg:120:83<br>WIKI:::Yogurt#Sweetened_and_flavored:Fruit Yogurt###Fruchtjoghurt"]
+	lassi["IMG:::Salt_lassi.jpg:60:81<br>WIKI:::Lassi<br>Ayran"]
+	water["IMG:::Glass_of_water_splash.jpg:120:90<br>WIKI:::Water###Wasser"]
+	plain_joghurt["IMG:::Plain_Yogurt.jpg:120:77<br>WIKI:::Yogurt:Plain yogurt###Naturjoghurt"]
+	strained_joghurt["IMG:::Labneh_(5196911587).jpg:120:80<br>WIKI:::Strained yogurt / Greek yogurt<br>Skyr###Abtropfjoghurt/ Griechischer Joghurt"]
+	acid_whey["IMG:::Soured_milk_whey.avrs-56.jpg:120:120<br>WIKI:::Whey:Acid whey / Sour whey###Sauermolke"]
+	straining[/"IMG:::StrainYogurt.jpg:120:120<br>Straining in centrifuge / membrane###Abtropfen über Zentrifuge / Membran"/]
+	acid_set_cheese_curds["WIKI:::Curd:Acid-set cheese curds###Sauermilchkäse"]
+	matured_rennet_type_cheese["IMG:::2016-12-09_Käseplatte_in_Tauberbischofsheim_02.jpg:120:67<br>WIKI:::Cheese:Matured rennet type cheese, hard/soft cheese###Gereifter Labkäse / Süßmilchkäse, Hart- bis Weichkäse"]
+	whey_cheese["IMG:::Orda-sajt.jpg:120:160<br>WIKI:::Whey cheese<br>e.g. Orda, Ricotta###Molkenkäse"]
+	whey_cream["Whey cream###Molkenrahm"]
+	regular_quark["IMG:::Skimmed_milk_quark_on_spoon.jpg:120:96<br>WIKI:::Quark_(dairy_product):Regular quark###Speisequark"]
+	acid_set_quark["Acid set quark###Sauermilchquark"]
+	matured_acid_set_cheese["IMG:::Sauermilchkaese_diverse.jpg:120:65<br>WIKI:::Acid-set_cheese:Matured acid set cheese<br>e.g. Handkäse, Harzer###Gereifter Sauermilchkäse"]
+	cottage_cheese["IMG:::Cottage_Cheese.jpg:120:112<br>WIKI:::Cottage cheese"]
+	whey_protein["IMG:::Whey_Protein_Scoop_(49935767168).jpg:120:90<br>WIKI:::Whey_protein:Whey protein powder###Proteinpulver"]
+	fresh_cheese["IMG:::Homemade_fresh_cheese_(22413233226).jpg:120:120<br>WIKI:::Fresh cheese###Frischkäse"]
+	separate_acid_cheese[/"IMG:::Curdled_milk_(22413233226).jpg:60:67<br>Coagulate and separate###Gerinnen und trennen"/]
+	rennet_type_cheese_curds["WIKI:::Curd:Rennet type cheese curds###Labkäse / Süßmilchkäse"]
+	sweet_whey["IMG:::Curds_and_whey.jpg:120:90<br>WIKI:::Whey:Sweet whey###Süßmolke"]
+	separate_rennet_cheese[/"IMG:::EasterSaris12Slovakia4.JPG:60:79<br>Coagulate and separate###Gerinnen und trennen"/]
+	pasteurized_whey_cream["Pasteurized whey cream###Pasteurisierter Molkenrahm"]
+	whey_butter["WIKI:::Whey butter###Molkebutter"]
+	butter["IMG:::%C5%A0v%C3%A9dsk%C3%BD_kol%C3%A1%C4%8D_naruby_904_(cropped).JPG:120:90<br>WIKI:::Butter"]
+	buttermilk["IMG:::Buttermilk_glass.jpg:60:80<br>WIKI:::Buttermilk###Buttermilch"]
 
-	class pasteurized_standardized_milk,sour_cream,creme_legere,micro_filtered_milk,schmand,creme_fraiche,uht_milk,pasteurized_nonhomogenized_milk,pasteurized_cream,pasteurized_standardized_cream,uht_standardized_cream shelf
-	class starch,saccharose external
-	class standardization,cream_separation action
+	%% %%%%%%%%%%%%%%%%%%%%%%%%%%%% CLASSES	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	class pasteurized_standardized_milk,sour_cream,creme_legere,micro_filtered_milk,schmand,creme_fraiche,uht_milk,pasteurized_nonhomogenized_milk,pasteurized_cream,pasteurized_standardized_cream,uht_standardized_cream,plain_joghurt,whey_protein,matured_rennet_type_cheese,whey_cheese,butter,whey_butter,buttermilk,fruit_joghurt,strained_joghurt shelf
+	class starch,saccharose,water external
+	class standardization,cream_separation,straining,separate_acid_cheese,separate_rennet_cheese action
 
+	%% %%%%%%%%%%%%%%%%%%%%%%%%%%%% RELATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	cow --> raw_milk
-	raw_milk -- Pasteurization / Pasteurisierung --> pasteurized_nonhomogenized_milk
+	raw_milk -- Pasteurization /###Pasteurisierung /<br>HTST --> pasteurized_nonhomogenized_milk
 	raw_milk --> cream_separation
 	cream_separation --> raw_cream
 	cream_separation --> raw_skim_milk
-	raw_cream -- Pasteurization / Pasteurisierung --> pasteurized_cream
+	raw_cream -- Pasteurization /###Pasteurisierung /<br>HTST --> pasteurized_cream
 	raw_cream --> standardization
 	raw_skim_milk --> standardization
 	standardization --> standardized_milk_cream
-	standardized_milk_cream -- Homogenization &lpar;pressure&rpar; / Homogenisierung &lpar;Druck&rpar; --> homogenized_milk_cream
-	homogenized_milk_cream -- Pasteurization / Pasteurisierung / HTST --> pasteurized_standardized_milk_cream
+	standardized_milk_cream -- Homogenization &lpar;pressure&rpar; /###Homogenisierung &lpar;Druck&rpar; --> homogenized_milk_cream
+	homogenized_milk_cream -- Pasteurization /###Pasteurisierung /<br>HTST --> pasteurized_standardized_milk_cream
+	lactic_acid_bacteria -- Or other acids like vinegar /###Oder andere Säuren wie Essig --> sour_cream_mix
 	pasteurized_standardized_milk_cream --> pasteurized_standardized_milk
 	pasteurized_standardized_milk_cream --> pasteurized_standardized_cream
-	homogenized_milk_cream -- UHT / Ultrahocherhitzt --> uht_standardized_milk_cream
+	pasteurized_standardized_cream -- Churning /###Schlagen --> butter
+	pasteurized_standardized_cream -- Churning /###Schlagen --> buttermilk
+	homogenized_milk_cream -- UHT /###Ultrahocherhitzt --> uht_standardized_milk_cream
 	uht_standardized_milk_cream --> uht_milk
 	uht_standardized_milk_cream --> uht_standardized_cream
-	raw_skim_milk -- Microfiltration / Ultrafiltration --> filtered_raw_skim_milk
+	raw_skim_milk -- Microfiltration /<br>Ultrafiltration --> filtered_raw_skim_milk
 	pasteurized_cream --> micro_filtered_milk
 	filtered_raw_skim_milk --> micro_filtered_milk
-	pasteurized_standardized_cream --> sour_cream_mix
-	uht_standardized_cream --> sour_cream_mix
-	lactic_acid_bacteria --> sour_cream_mix
+	pasteurized_standardized_cream -- Or UHT --> sour_cream_mix
 	sour_cream_mix -- >= 10 % --> sour_cream
 	sour_cream_mix -- 18-20 % --> creme_legere
 	sour_cream_mix -- 20-29% --> schmand
 	starch --> schmand
 	sour_cream_mix -- >= 30% --> creme_fraiche
 	saccharose --> creme_fraiche
+	pasteurized_standardized_milk --> fermentation
+	lactic_acid_bacteria --> fermentation
+	fermentation --> plain_joghurt
+	plain_joghurt --> lassi
+	water --> lassi
+	plain_joghurt --> fruit_joghurt
+	saccharose -- And fruits/###Und Früchte --> fruit_joghurt
+	plain_joghurt --> straining
+%% butterfat -- Optionally /###Optional --> straining
+%% powdered_milk -- Optionally /###Optional --> straining
+	straining --> strained_joghurt
+	straining --> acid_whey
+	fermentation --> separate_acid_cheese
+	separate_acid_cheese --> acid_set_cheese_curds
+	separate_acid_cheese --> acid_whey
+	acid_set_cheese_curds --> fresh_cheese
+	fresh_cheese --> acid_set_quark
+	acid_set_quark -- And a small amount of rennet /###Und eine kleine Menge Lab --> regular_quark
+	fresh_cheese --> cottage_cheese
+	pasteurized_standardized_cream --> cottage_cheese
+	acid_set_cheese_curds -- Maturation / Reifung --> matured_acid_set_cheese
+	pasteurized_standardized_milk --> separate_rennet_cheese
+	rennet --> separate_rennet_cheese
+	separate_rennet_cheese --> rennet_type_cheese_curds
+	separate_rennet_cheese --> sweet_whey
+	rennet_type_cheese_curds -- Maturation / Reifung --> matured_rennet_type_cheese
+	sweet_whey -- Centrifugal cream separation /###Aufrahmen / zentrifugieren --> whey_cream
+	whey_cream -- Pasteurization /###Pasteurisierung /<br>HTST --> pasteurized_whey_cream
+	pasteurized_whey_cream -- Churning /###Schlagen --> whey_butter
+%%	sweet_whey -- ??? Remove fat by drying --> whey_butter
+	sweet_whey -- Heating /###Erhitzen --> whey_cheese
+%% sweet_whey -- Heating /###Erhitzen --> sig (candy)
+	sweet_whey -- Filter --> whey_protein
+%% acid_whey -- Filter --> whey_protein
